@@ -1,0 +1,72 @@
+{
+	"name": "DimTime",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DimTime",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DimTimeTable",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          keyTime as string,",
+				"          datetime as string,",
+				"          dayTime as string,",
+				"          dayWeekTime as string,",
+				"          dayWeekAbbrevTime as string,",
+				"          dayWeekCompleteTime as string,",
+				"          monthTime as string,",
+				"          monthAbbrevTime as string,",
+				"          monthCompleteTime as string,",
+				"          bimonthTime as string,",
+				"          quarterTime as string,",
+				"          semesterTime as string,",
+				"          yearTime as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          keyTime as integer,",
+				"          datetime as string,",
+				"          dayTime as integer,",
+				"          dayWeekTime as integer,",
+				"          dayWeekAbbrevTime as string,",
+				"          dayWeekCompleteTime as string,",
+				"          monthTime as integer,",
+				"          monthAbbrevTime as string,",
+				"          monthCompleteTime as string,",
+				"          bimonthTime as integer,",
+				"          quarterTime as integer,",
+				"          semesterTime as integer,",
+				"          yearTime as integer",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+			]
+		}
+	}
+}
