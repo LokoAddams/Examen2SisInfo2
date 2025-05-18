@@ -1,0 +1,34 @@
+{
+	"name": "DimCoinTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "keyCoin",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "abbrevCoin",
+				"type": "varchar"
+			},
+			{
+				"name": "nameCoin",
+				"type": "varchar"
+			},
+			{
+				"name": "symbolCoin",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dimCoin"
+		}
+	}
+}

@@ -1,0 +1,77 @@
+{
+	"name": "DimTimeTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "keyTime",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "datetime",
+				"type": "varchar"
+			},
+			{
+				"name": "dayTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "dayWeekTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "dayWeekAbbrevTime",
+				"type": "varchar"
+			},
+			{
+				"name": "dayWeekCompleteTime",
+				"type": "varchar"
+			},
+			{
+				"name": "monthTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "monthAbbrevTime",
+				"type": "varchar"
+			},
+			{
+				"name": "monthCompleteTime",
+				"type": "varchar"
+			},
+			{
+				"name": "bimonthTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "quarterTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "semesterTime",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "yearTime",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dimTime"
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"name": "DimCompanyTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "keyCompany",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "stockCodeCompany",
+				"type": "varchar"
+			},
+			{
+				"name": "nameCompany",
+				"type": "varchar"
+			},
+			{
+				"name": "sectorCodeCompany",
+				"type": "varchar"
+			},
+			{
+				"name": "sectorCompany",
+				"type": "varchar"
+			},
+			{
+				"name": "segmentCompany",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dimCompany"
+		}
+	}
+}
