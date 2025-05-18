@@ -1,0 +1,48 @@
+{
+	"name": "DimCompany",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dimCompany.csv",
+				"container": "airbnb"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "keyCompany",
+				"type": "String"
+			},
+			{
+				"name": "stockCodeCompany",
+				"type": "String"
+			},
+			{
+				"name": "nameCompany",
+				"type": "String"
+			},
+			{
+				"name": "sectorCodeCompany",
+				"type": "String"
+			},
+			{
+				"name": "sectorCompany",
+				"type": "String"
+			},
+			{
+				"name": "segmentCompany",
+				"type": "String"
+			}
+		]
+	}
+}

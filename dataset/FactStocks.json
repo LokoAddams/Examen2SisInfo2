@@ -1,0 +1,52 @@
+{
+	"name": "FactStocks",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "factStocks.csv",
+				"container": "airbnb"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "keyTime",
+				"type": "String"
+			},
+			{
+				"name": "keyCompany",
+				"type": "String"
+			},
+			{
+				"name": "openValueStock",
+				"type": "String"
+			},
+			{
+				"name": "closeValueStock",
+				"type": "String"
+			},
+			{
+				"name": "highValueStock",
+				"type": "String"
+			},
+			{
+				"name": "lowValueStock",
+				"type": "String"
+			},
+			{
+				"name": "quantityStock",
+				"type": "String"
+			}
+		]
+	}
+}

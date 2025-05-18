@@ -1,0 +1,40 @@
+{
+	"name": "DimCoin",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dimCoin.csv",
+				"container": "airbnb"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "keyCoin",
+				"type": "String"
+			},
+			{
+				"name": "abbrevCoin",
+				"type": "String"
+			},
+			{
+				"name": "nameCoin",
+				"type": "String"
+			},
+			{
+				"name": "symbolCoin",
+				"type": "String"
+			}
+		]
+	}
+}

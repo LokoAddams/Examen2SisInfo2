@@ -1,0 +1,36 @@
+{
+	"name": "FactCoins",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "factCoins.csv",
+				"container": "airbnb"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "keyTime",
+				"type": "String"
+			},
+			{
+				"name": "keyCoin",
+				"type": "String"
+			},
+			{
+				"name": "valueCoin",
+				"type": "String"
+			}
+		]
+	}
+}

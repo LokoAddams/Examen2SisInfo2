@@ -1,0 +1,76 @@
+{
+	"name": "DimTime",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dimTime.csv",
+				"container": "airbnb"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "keyTime",
+				"type": "String"
+			},
+			{
+				"name": "datetime",
+				"type": "String"
+			},
+			{
+				"name": "dayTime",
+				"type": "String"
+			},
+			{
+				"name": "dayWeekTime",
+				"type": "String"
+			},
+			{
+				"name": "dayWeekAbbrevTime",
+				"type": "String"
+			},
+			{
+				"name": "dayWeekCompleteTime",
+				"type": "String"
+			},
+			{
+				"name": "monthTime",
+				"type": "String"
+			},
+			{
+				"name": "monthAbbrevTime",
+				"type": "String"
+			},
+			{
+				"name": "monthCompleteTime",
+				"type": "String"
+			},
+			{
+				"name": "bimonthTime",
+				"type": "String"
+			},
+			{
+				"name": "quarterTime",
+				"type": "String"
+			},
+			{
+				"name": "semesterTime",
+				"type": "String"
+			},
+			{
+				"name": "yearTime",
+				"type": "String"
+			}
+		]
+	}
+}
