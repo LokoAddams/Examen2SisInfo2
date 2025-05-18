@@ -1,0 +1,60 @@
+{
+	"name": "factStocks",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "FactStocks",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "FactstocksTable",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          keyTime as string,",
+				"          keyCompany as string,",
+				"          openValueStock as string,",
+				"          closeValueStock as string,",
+				"          highValueStock as string,",
+				"          lowValueStock as string,",
+				"          quantityStock as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          keyTime as integer,",
+				"          keyCompany as integer,",
+				"          openValueStock as double,",
+				"          closeValueStock as double,",
+				"          highValueStock as double,",
+				"          lowValueStock as double,",
+				"          quantityStock as double",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+			]
+		}
+	}
+}
